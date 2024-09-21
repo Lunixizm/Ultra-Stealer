@@ -9,10 +9,6 @@ if errorlevel 1 (
 @echo off
 echo Starting PyInstaller...
 pyinstaller --onefile --noconsole --clean --manifest=uac_admin.manifest .\main.py
-if errorlevel 1 (
-    echo Hata: PyInstaller çalışmadı!
-    exit /b 1
-)
 
 echo PyInstaller Finished!
 set scriptDir=%~dp0
