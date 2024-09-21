@@ -6,3 +6,5 @@ DEL main.spec
 cd /d dist
 move main.exe ..
 cd ..
+powershell -Command "Remove-Item -Path '%scriptDir%dist' -Recurse -Force"
+ren main.exe stealer.exe
