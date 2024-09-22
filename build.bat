@@ -48,3 +48,4 @@ DEL final_stealer.exe
 DEL stealer.exe
 
 ren fake.exe stealer.exe
+
