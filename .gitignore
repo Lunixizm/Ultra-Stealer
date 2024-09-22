@@ -3,3 +3,5 @@ stealer.exe
 stealer.bin
 shell.bin
 .vscode/settings.json
+build/main/base_library.zip
+main.spec
