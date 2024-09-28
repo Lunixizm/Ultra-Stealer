@@ -1,7 +1,7 @@
 import os
 import sqlite3
 import argparse
-import json  # Import the json module
+import json
 
 # Define paths for Firefox profiles
 ROAMING = os.environ["APPDATA"]
